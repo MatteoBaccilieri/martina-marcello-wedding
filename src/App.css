@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.App {
+  height: 100%;
+  width: 100%;
+  background: #fff0f5; /* soft pink */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  background: #fff; /* white card */
+  padding: 50px 40px;
+  border-radius: 25px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  text-align: center;
+  min-width: 300px;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 4em;
+  color: #d63384;
+  margin-bottom: 30px;
+}
+
+/* Countdown */
+.countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+/* Each square */
+.calendar-square {
+  background: #fff; 
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-width: 70px;
+}
+
+.number {
+  font-family: 'Courier New', monospace;
+  font-size: 2em;
+  font-weight: bold;
+  color: #333;
+}
+
+.label {
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 5px;
+}
+
+.colon {
+ font-size: 2em;
+  color: #333;
+  margin: 0 5px; /* spacing between squares */
+}
+
+.calendar-square:last-child .colon {
+  display: none;
+}
+
+/* Small text */
+small {
+  font-size: 1.2em;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 3em;
+  }
+  .calendar-square {
+    min-width: 50px;
+    padding: 14px 14px 14px 14px;
+  }
+  .number {
+    font-size: 1.5em;
+  }
+  .colon {
+    font-size: 1.5em;
+    right: -10px;
+  }
+}
