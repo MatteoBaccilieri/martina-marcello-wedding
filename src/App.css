@@ -187,10 +187,12 @@ h4 {
 
   h1 {
     font-size: 3em;
+    -webkit-text-stroke: 0.2px #ffffff;
   }
 
   h4 {
     font-size: 1.5em;
+    -webkit-text-stroke: 0.2px #ffffff;
   }
 }
 
@@ -211,10 +213,12 @@ h4 {
 
   h1 {
     font-size: 4em;
+    -webkit-text-stroke: 0.3px #ffffff;
   }
 
   h4 {
     font-size: 1.7em;
+    -webkit-text-stroke: 0.3px #ffffff;
   }
 }
 
