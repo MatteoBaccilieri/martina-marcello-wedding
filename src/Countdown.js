@@ -1,56 +1,52 @@
 import React, { useState, useEffect } from "react";
+import FlipCard from "./FlipCard";
 
 const Countdown = ({ weddingDate }) => {
-  const [timeLeft, setTimeLeft] = useState({});
+  const [timeLeft, setTimeLeft] = useState(null);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      const now = new Date();
-      const diff = weddingDate - now;
+  const interval = setInterval(() => {
+    const now = new Date();
+    console.log(now)
+    const diff = weddingDate.getTime() - now.getTime();
 
-      if (diff <= 0) {
-        setTimeLeft(null);
-        clearInterval(interval);
-        return;
-      }
+    if (diff <= 0) {
+      setTimeLeft(null);
+      clearInterval(interval);
+      return;
+    }
 
-      setTimeLeft({
-        days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((diff / (1000 * 60)) % 60),
-        seconds: Math.floor((diff / 1000) % 60),
-      });
-    }, 1000);
+    const totalSeconds = Math.floor(diff / 1000);
 
-    return () => clearInterval(interval);
-  }, [weddingDate]);
+    const days = Math.floor(totalSeconds / (60 * 60 * 24));
+    const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60));
+    const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
+    const seconds = totalSeconds % 60;
 
-  if (!timeLeft) return <div className="countdown">È il grande giorno!</div>;
+    setTimeLeft({ days, hours, minutes, seconds });
+  }, 1000);
 
-  const units = [
-    { label: "Giorni", value: timeLeft.days },
-    { label: "Ore", value: timeLeft.hours },
-    { label: "Minuti", value: timeLeft.minutes },
-    { label: "Secondi", value: timeLeft.seconds },
-  ];
+  return () => clearInterval(interval);
+}, [weddingDate]);
+
+  if (!timeLeft) {
+    return <div className="countdown">È il grande giorno!</div>;
+  }
 
   return (
     <div className="countdown">
-        {units.map((unit, idx) => (
-        <React.Fragment key={idx}>
-            <div className="calendar-square">
-            <div className="number">
-                {unit.value !== undefined
-                ? unit.value.toString().padStart(2, "0")
-                : "00"}
-            </div>
-            <div className="label">{unit.label}</div>
-            </div>
-            {idx < units.length - 1 && <div className="colon">:</div>}
-        </React.Fragment>
-        ))}
+      <FlipCard value={timeLeft.days} label="Giorni" />
+      <div className="colon">:</div>
+
+      <FlipCard value={timeLeft.hours} label="Ore" />
+      <div className="colon">:</div>
+
+      <FlipCard value={timeLeft.minutes} label="Minuti" />
+      <div className="colon">:</div>
+
+      <FlipCard value={timeLeft.seconds} label="Secondi" />
     </div>
-    );
+  );
 };
 
 export default Countdown;

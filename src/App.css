@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 
 body, html, #root {
   height: 100%;
@@ -9,94 +10,172 @@ body, html, #root {
 .App {
   height: 100%;
   width: 100%;
-  background: #fff0f5; /* soft pink */
+  background: 
+    url('./assets/images/page_background.jpg');
+  background-position: center;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Center card */
 .overlay {
-  background: #fff; /* white card */
-  padding: 50px 40px;
+  background:
+    linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), 
+    url('./assets/images/overlay_background.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 40px 5vw 2vw 5vw;
   border-radius: 25px;
   box-shadow: 0 15px 30px rgba(0,0,0,0.15);
   text-align: center;
   min-width: 300px;
 }
 
+/* Title */
 h1 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  font-size: 4em;
-  color: #d63384;
-  margin-bottom: 30px;
+  font-family: 'Cookie', cursive;
+  font-weight: 900;
+  font-size: 5em;
+  color: #ff69b4;
+  -webkit-text-stroke: 0.5px #ffffff;
 }
 
-/* Countdown */
+/* SubTitles*/
+h4 {
+  font-family: 'Cookie', cursive;
+  font-size: 2em;
+  margin: 0%;
+  color: #ff69b4;
+  -webkit-text-stroke: 0.5px #ffffff;
+}
+
+/* Countdown row */
 .countdown {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
   margin-bottom: 20px;
 }
 
-/* Each square */
-.calendar-square {
-  background: #fff; 
-  padding: 20px 25px;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+/* Colon */
+.colon {
+  font-size: 2em;
+  color: #333;
+}
+
+/* Number */
+.number {
+  font-family: 'Cookie', cursive;
+}
+
+/* Calendar container */
+.calendar-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
-  min-width: 70px;
 }
 
-.number {
-  font-family: 'Courier New', monospace;
-  font-size: 2em;
+/* Flip container */
+.flip-card {
+  position: relative;
+  width: 110px;
+  height: 70px;
+  perspective: 1200px;
+}
+
+/* Shared styles for all halves */
+.top, .bottom, .flip-top, .flip-bottom {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Courier New", monospace;
+  font-size: 2.2em;
   font-weight: bold;
   color: #333;
+
+  background: linear-gradient(180deg, #ffffff 0%, #f6f6f6 100%);
+  border-radius: 14px;
+  padding: 3px 0 0 0;
+
+  backface-visibility: hidden;
 }
 
+/* Static top half */
+.top {
+  top: 0;
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+}
+
+/* Static bottom half */
+.bottom {
+  bottom: 0;
+  transform: rotateX(180deg);
+  border-top: 1px solid #ddd;
+}
+
+/* Animated top half */
+.flip-top {
+  top: 0;
+  transform-origin: bottom;
+  animation: flipTop 0.6s ease-in forwards;
+}
+
+/* Animated bottom half */
+.flip-bottom {
+  bottom: 0;
+  transform-origin: top;
+  animation: flipBottom 0.6s ease-out forwards;
+  
+}
+
+/* Top half animation */
+@keyframes flipTop {
+  0%   { transform: rotateX(0deg); }
+  100% { transform: rotateX(-90deg); }
+}
+
+/* Bottom half animation */
+@keyframes flipBottom {
+  0%   { transform: rotateX(90deg); }
+  100% { transform: rotateX(0deg); }
+}
+
+/* Label */
 .label {
-  font-size: 0.9em;
-  color: #555;
-  margin-top: 5px;
+  font-size: 1.5em;
+  margin-top: 6px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  color: #d63384;
 }
 
-.colon {
- font-size: 2em;
-  color: #333;
-  margin: 0 5px; /* spacing between squares */
-}
-
-.calendar-square:last-child .colon {
-  display: none;
-}
-
-/* Small text */
-small {
-  font-size: 1.2em;
-  color: #555;
+/* Container for each card */
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Responsive */
 @media (max-width: 600px) {
-  h1 {
-    font-size: 3em;
+  .flip-card {
+    width: 60px;
+    height: 55px;
   }
-  .calendar-square {
-    min-width: 50px;
-    padding: 14px 14px 14px 14px;
-  }
-  .number {
-    font-size: 1.5em;
-  }
-  .colon {
-    font-size: 1.5em;
-    right: -10px;
+
+  .top, .bottom, .flip-top, .flip-bottom {
+    font-size: 1.6em;
   }
 }
