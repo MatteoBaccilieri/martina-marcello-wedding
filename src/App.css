@@ -169,7 +169,33 @@ h4 {
 }
 
 /* Responsive */
-@media (max-width: 600px) {
+/* Small smartphones: up to 400px */
+@media (max-width: 400px) {
+  .flip-card {
+    width: 50px;
+    height: 45px;
+  }
+
+  .top, .bottom, .flip-top, .flip-bottom {
+    font-size: 1.2em;
+    padding: 2px 0 0 0;
+  }
+
+  .label {
+    font-size: 1.2em;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  h4 {
+    font-size: 1.5em;
+  }
+}
+
+/* Smartphones: 401px – 600px */
+@media (min-width: 401px) and (max-width: 600px) {
   .flip-card {
     width: 60px;
     height: 55px;
@@ -177,5 +203,113 @@ h4 {
 
   .top, .bottom, .flip-top, .flip-bottom {
     font-size: 1.6em;
+  }
+
+  .label {
+    font-size: 1.3em;
+  }
+
+  h1 {
+    font-size: 4em;
+  }
+
+  h4 {
+    font-size: 1.7em;
+  }
+}
+
+/* Tablets: 601px – 900px */
+@media (min-width: 601px) and (max-width: 900px) {
+  .flip-card {
+    width: 90px;
+    height: 60px;
+  }
+
+  .top, .bottom, .flip-top, .flip-bottom {
+    font-size: 2em;
+  }
+
+  .label {
+    font-size: 1.4em;
+  }
+
+  h1 {
+    font-size: 4.5em;
+  }
+
+  h4 {
+    font-size: 1.8em;
+  }
+}
+
+/* Small laptops: 901px – 1200px */
+@media (min-width: 901px) and (max-width: 1200px) {
+  .flip-card {
+    width: 100px;
+    height: 65px;
+  }
+
+  .top, .bottom, .flip-top, .flip-bottom {
+    font-size: 2.1em;
+  }
+
+  .label {
+    font-size: 1.5em;
+  }
+
+  h1 {
+    font-size: 5em;
+  }
+
+  h4 {
+    font-size: 2em;
+  }
+}
+
+/* Large laptops / desktops: 1201px – 1600px */
+@media (min-width: 1201px) and (max-width: 1600px) {
+  .flip-card {
+    width: 110px;
+    height: 70px;
+  }
+
+  .top, .bottom, .flip-top, .flip-bottom {
+    font-size: 2.2em;
+  }
+
+  .label {
+    font-size: 1.5em;
+  }
+
+  h1 {
+    font-size: 5.5em;
+  }
+
+  h4 {
+    font-size: 2em;
+  }
+}
+
+/* Extra large screens: 1601px and above */
+@media (min-width: 1601px) {
+  .flip-card {
+    width: 120px;
+    height: 80px;
+  }
+
+  .top, .bottom, .flip-top, .flip-bottom {
+    font-size: 2.5em;
+  }
+
+  .label {
+    font-size: 1.6em;
+  }
+
+  h1 {
+    font-size: 6em;
+  }
+
+  h4 {
+    font-size: 2.2em;
   }
 }
