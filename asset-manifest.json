@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/martina-marcello-wedding/static/css/main.b1509fbd.css",
-    "main.js": "/martina-marcello-wedding/static/js/main.0c9e948d.js",
+    "main.css": "/martina-marcello-wedding/static/css/main.61055a9a.css",
+    "main.js": "/martina-marcello-wedding/static/js/main.c06e4b7a.js",
     "static/js/453.6ccedbfb.chunk.js": "/martina-marcello-wedding/static/js/453.6ccedbfb.chunk.js",
     "static/media/overlay_background.png": "/martina-marcello-wedding/static/media/overlay_background.e9890197e0a0bc7e0c38.png",
     "static/media/page_background.jpg": "/martina-marcello-wedding/static/media/page_background.ce7d68319c033def2e71.jpg",
     "index.html": "/martina-marcello-wedding/index.html",
-    "main.b1509fbd.css.map": "/martina-marcello-wedding/static/css/main.b1509fbd.css.map",
-    "main.0c9e948d.js.map": "/martina-marcello-wedding/static/js/main.0c9e948d.js.map",
+    "main.61055a9a.css.map": "/martina-marcello-wedding/static/css/main.61055a9a.css.map",
+    "main.c06e4b7a.js.map": "/martina-marcello-wedding/static/js/main.c06e4b7a.js.map",
     "453.6ccedbfb.chunk.js.map": "/martina-marcello-wedding/static/js/453.6ccedbfb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b1509fbd.css",
-    "static/js/main.0c9e948d.js"
+    "static/css/main.61055a9a.css",
+    "static/js/main.c06e4b7a.js"
   ]
 }
