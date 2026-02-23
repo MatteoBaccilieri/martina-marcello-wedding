@@ -1,0 +1,27 @@
+.hero-card {
+  text-align: center;
+  position: relative;
+}
+
+.section-hero {
+  padding: 0;
+  width: 100%;
+}
+
+/* Scroll button */
+.scroll-btn {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  animation: bounce 1s infinite;
+}
+
+.scroll-icon {
+  width: 32px;
+  height: 32px;
+  color: #E5A4C7;
+}

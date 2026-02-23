@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./AddToCalendar.css";
+import "../styles/AddToCalendar.css";
 
 const AddToCalendar = ({ weddingDate }) => {
   const [platform, setPlatform] = useState("desktop");
@@ -62,10 +62,10 @@ END:VCALENDAR
   };
 
   return (
-    <div className="calendar-wrapper">
-      <div className="calendar-buttons">
+    <div className="add-calendar-wrapper">
+      <div className="add-calendar-buttons">
         {(platform === "ios" || platform === "macos") && (
-          <button className="calendar-btn" onClick={saveToICS}>
+          <button className="add-calendar-btn" onClick={saveToICS}>
             Aggiungi al calendario
           </button>
         )}
@@ -74,7 +74,7 @@ END:VCALENDAR
             href={googleCalendarUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            className="calendar-btn"
+            className="add-calendar-btn"
           >
             Aggiungi al calendario
           </a>

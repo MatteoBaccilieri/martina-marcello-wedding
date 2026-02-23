@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import FlipCard from "./FlipCard";
+import "../styles/Countdown.css"
 
 const Countdown = ({ weddingDate }) => {
   const [timeLeft, setTimeLeft] = useState(null);

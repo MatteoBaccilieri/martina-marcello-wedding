@@ -1,0 +1,33 @@
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* Colon */
+.colon {
+  font-size: 2em;
+  color: #333;
+  margin-top: 2%;
+}
+
+/* Number */
+.number {
+  font-family: "Alyamama", serif;
+}
+
+/* Calendar container */
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Flip container */
+.flip-card {
+  position: relative;
+  width: 110px;
+  height: 70px;
+  perspective: 1200px;
+}

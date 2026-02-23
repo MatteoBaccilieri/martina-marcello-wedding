@@ -1,22 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alyamama:wght@300..900&display=swap');
+
+@font-face {
+  font-family: 'Eyesome Script';
+  src: url('./assets/font/EyesomeItalic.woff') format('woff2'),
+       url('./assets/font/EyesomeItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Eyesome Script';
+  src: url('./assets/font/EyesomeScript.woff2') format('woff2'),
+       url('./assets/font/EyesomeScript.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
 
 body, html, #root {
   height: 100%;
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Alyamama", serif;
 }
 
-.App {
+
+.wedding-container {
   height: 100%;
   width: 100%;
-  background: 
-    url('./assets/images/page_background.jpg');
   background-position: center;
   background-size: cover;
-  display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100%;
+  font-family: "Alyamama", serif;
+  color: #333;
+}
+
+.wedding-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('./assets/images/Martina\ &\ Marcello_17.jpeg');
+  background-position: center;
+  background-size: cover;
+  opacity: 0.70;
+  z-index: -1;
 }
 
 /* Center card */
@@ -36,55 +71,18 @@ body, html, #root {
 
 /* Title */
 h1 {
-  font-family: 'Cookie', cursive;
+  font-family: "Alyamama", serif;
   font-weight: 900;
   font-size: 5em;
-  color: #ff69b4;
-  -webkit-text-stroke: 0.5px #ffffff;
+  color: #E5A4C7;
 }
 
 /* SubTitles*/
 h4 {
-  font-family: 'Cookie', cursive;
+  font-family: "Alyamama", serif;
   font-size: 2em;
   margin: 0%;
-  color: #ff69b4;
-  -webkit-text-stroke: 0.5px #ffffff;
-}
-
-/* Countdown row */
-.countdown {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-/* Colon */
-.colon {
-  font-size: 2em;
-  color: #333;
-  margin-top: 4%;
-}
-
-/* Number */
-.number {
-  font-family: 'Cookie', cursive;
-}
-
-/* Calendar container */
-.calendar-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Flip container */
-.flip-card {
-  position: relative;
-  width: 110px;
-  height: 70px;
-  perspective: 1200px;
+  color: #E5A4C7;
 }
 
 /* Shared styles for all halves */
@@ -99,7 +97,7 @@ h4 {
   justify-content: center;
   align-items: center;
 
-  font-family: "Courier New", monospace;
+  font-family: "Alyamama", serif;
   font-size: 2.2em;
   font-weight: bold;
   color: #333;
@@ -156,7 +154,7 @@ h4 {
 .label {
   font-size: 1.5em;
   margin-top: 6px;
-  font-family: 'Playfair Display', serif;
+  font-family: "Alyamama", serif;
   font-weight: 500;
   color: #d63384;
 }
@@ -168,6 +166,237 @@ h4 {
   align-items: center;
 }
 
+/* Sezioni */
+.section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 15px;
+}
+
+.section-rose {
+  background: rgba(255, 240, 245, 0.9);
+}
+
+.section-light {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.section-dark {
+  background: rgba(40, 30, 40, 0.95);
+  color: #fff;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Titoli */
+.wedding-title {
+  font-family: 'Eyesome Script';
+  font-weight: 900;
+  font-size: 5em;
+  color: #E5A4C7;
+  margin: 5em auto 0 auto;
+}
+
+.wedding-title .accent {
+  color: #E5A4C7;
+}
+
+.wedding-subtitle {
+  font-family: "Alyamama", serif;
+  font-size: 1.8em;
+  color: #E5A4C7;
+  margin: 5px auto;
+}
+
+.section-title {
+  font-family: "Alyamama", serif;
+  font-size: 2.5em;
+  color: #E5A4C7;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.section-title.light {
+  color: #ffb6c1;
+}
+
+/* Testo */
+.text {
+  font-family: "Alyamama", serif;
+  font-size: 1.5em;
+  color: #000000;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.text-large {
+  font-family: "Alyamama", serif;
+  font-size: 2em;
+  color: #1d1d1d;
+  margin-bottom: 20px;
+}
+
+/* Icone */
+.icon-heart {
+  width: 48px;
+  height: 48px;
+  color: #E5A4C7;
+  margin: 0 auto 0px;
+  animation: pulse 2s infinite;
+}
+
+.card-icon {
+  width: 40px;
+  height: 40px;
+  color: #E5A4C7;
+  margin-bottom: 15px;
+}
+
+.info-icon {
+  width: 20px;
+  height: 20px;
+  color: #E5A4C7;
+}
+
+.section-icon {
+  width: 48px;
+  height: 48px;
+  color: #E5A4C7;
+  margin: 0 auto 20px;
+}
+
+.timeline-icon {
+  width: 24px;
+  height: 24px;
+  color: #E5A4C7;
+}
+
+/* Card interne */
+.card-title {
+  font-family: "Alyamama", serif;
+  font-size: 1.8em;
+  color: #1d1d1d;
+  margin-bottom: 20px;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+  color: #1d1d1d;
+}
+
+.card-text {
+  font-size: 1.6em;
+  color: #1d1d1d;
+  margin-top: 20px;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Bottoni */
+.btn {
+  padding: 15px 40px;
+  border-radius: 25px;
+  border: none;
+  font-family: "Alyamama", serif;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.btn-primary {
+  background: #E5A4C7;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: white;
+  transform: translateY(-2px);
+  color:#E5A4C7
+}
+
+.btn-accent {
+  background: #E5A4C7;
+  color: white;
+  width: 100%;
+}
+
+.btn-accent:hover {
+  background: white;
+  transform: translateY(-2px);
+  color:#E5A4C7
+}
+
+/* Animazioni */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-10px); }
+}
+
+/* Responsive */
+@media (min-width: 769px) {
+  .details-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .timeline-item {
+    gap: 40px;
+  }
+  
+  .wedding-title {
+    font-size: 6em;
+    font-style: italic;
+  }
+}
+
+@media (max-width: 1366px) {
+  .wedding-title {
+    margin: 2.5em auto 0 auto;
+  }
+}
 /* Responsive */
 /* Small smartphones: up to 400px */
 @media (max-width: 400px) {
@@ -191,12 +420,14 @@ h4 {
 
   h1 {
     font-size: 3em;
-    -webkit-text-stroke: 0.2px #ffffff;
   }
 
   h4 {
     font-size: 1.5em;
-    -webkit-text-stroke: 0.1px #ffffff;
+  }
+
+  .wedding-title {
+     margin: 28% auto;
   }
 }
 
@@ -217,12 +448,10 @@ h4 {
 
   h1 {
     font-size: 4em;
-    -webkit-text-stroke: 0.3px #ffffff;
   }
 
   h4 {
     font-size: 1.7em;
-    -webkit-text-stroke: 0.1px #ffffff;
   }
 }
 

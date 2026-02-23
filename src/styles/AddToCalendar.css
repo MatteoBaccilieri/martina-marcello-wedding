@@ -1,4 +1,6 @@
-.calendar-wrapper {
+@import url('https://fonts.googleapis.com/css2?family=Alyamama:wght@300..900&display=swap');
+
+.add-calendar-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,32 +8,32 @@
   margin-bottom: 2%;
 }
 
-.calendar-title {
-  color: #ff69b4;
+.add-calendar-title {
+  color: #E5A4C7;
   margin-bottom: 10px;
   text-align: center;
 }
 
-.calendar-buttons {
+.add-calendar-buttons {
   display: flex;
   gap: 15px; /* spacing between buttons */
 }
 
-.calendar-btn {
+.add-calendar-btn {
   padding: 10px 20px;
-  background-color: #ffff;
-  color: #ff69b4;
+  background-color: #E5A4C7;
+  color: white;
   border: none;
   border-radius: 25px;
-  font-family: 'Cookie', cursive;
+  font-family: "Alyamama", serif;
   font-size: 1.5em;
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
 }
 
-.calendar-btn:hover {
-  background-color: #c12b73;
+.add-calendar-btn:hover {
+  background: white;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  color:#E5A4C7
 }
