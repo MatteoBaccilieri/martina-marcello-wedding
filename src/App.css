@@ -1,22 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alyamama:wght@300..900&display=swap');
-
-@font-face {
-  font-family: 'Eyesome Script';
-  src: url('./assets/font/EyesomeItalic.woff') format('woff2'),
-       url('./assets/font/EyesomeItalic.woff') format('woff');
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-}
 
 @font-face {
   font-family: 'Eyesome Script';
   src: url('./assets/font/EyesomeScript.woff2') format('woff2'),
        url('./assets/font/EyesomeScript.woff') format('woff');
   font-weight: normal;
-  font-style: italic;
+  font-style: normal;
   font-display: swap;
 }
 
@@ -194,12 +184,12 @@ h4 {
 
 /* Titoli */
 .wedding-title {
-  font-family: 'Eyesome Script';
+  font-family: 'Eyesome Script', 'Cookie', cursive;
   font-weight: 900;
   font-size: 5em;
   color: #000000 !important;
   -webkit-text-stroke: 1px #E5A4C7;
-  margin: 5em auto 0 auto;
+  margin: 33vh auto 0 auto;
   /* Disabilita feature font che causano problemi */
   font-feature-settings: normal;
   font-variant: normal;
@@ -523,9 +513,9 @@ h4 {
 
 /* WEDDING TITLE ADAPTER */
 /* Molto basso: fino a 600px altezza */
-@media (max-height: 600px) {
+@media (max-height: 600px) and (max-width:900px) {
   .wedding-title {
-    margin: 35vh auto 0 auto;
+    margin: 33vh auto 0 auto;
     font-size: 2.7em;
   }
 }
