@@ -29,7 +29,8 @@ return (
           <MapPin className="section-icon" />
           <p className="wedding-date">29 Agosto 2026</p>
           <h3 className="location-name">Podere Calvanella</h3>
-          <p className="location-city">40050 Monterenzio (BO)</p>
+          <p className='location-address'>Via Calvanella, 7 </p>
+          <p className="location-city">San Clemente - Monterenzio (BO)</p>
         </div>
       </div>
     </section>

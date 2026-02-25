@@ -37,7 +37,7 @@ body, html, #root {
   align-items: center;
   min-height: 100%;
   font-family: "Alyamama", serif;
-  color: #333;
+  color: #000000;
 }
 
 .wedding-container::before {
@@ -197,18 +197,16 @@ h4 {
   font-family: 'Eyesome Script';
   font-weight: 900;
   font-size: 5em;
-  color: #E5A4C7;
+  color: #000000;
+  -webkit-text-stroke: 1px #E5A4C7;
   margin: 5em auto 0 auto;
-}
-
-.wedding-title .accent {
-  color: #E5A4C7;
 }
 
 .wedding-subtitle {
   font-family: "Alyamama", serif;
   font-size: 1.8em;
   color: #E5A4C7;
+  -webkit-text-stroke: 0.25px white;
   margin: 5px auto;
 }
 
@@ -221,13 +219,13 @@ h4 {
 }
 
 .section-title.light {
-  color: #ffb6c1;
+  color: #E5A4C7;
 }
 
 /* Testo */
 .text {
   font-family: "Alyamama", serif;
-  font-size: 1.5em;
+  font-size: 1.3em;
   color: #000000;
   margin-bottom: 10px;
   line-height: 1.6;
@@ -235,8 +233,8 @@ h4 {
 
 .text-large {
   font-family: "Alyamama", serif;
-  font-size: 2em;
-  color: #1d1d1d;
+  font-size: 1.8em;
+  color: #000000;
   margin-bottom: 20px;
 }
 
@@ -247,6 +245,7 @@ h4 {
   color: #E5A4C7;
   margin: 0 auto 0px;
   animation: pulse 2s infinite;
+  -webkit-text-stroke: 1px #ffffff;
 }
 
 .card-icon {
@@ -266,21 +265,7 @@ h4 {
   width: 48px;
   height: 48px;
   color: #E5A4C7;
-  margin: 0 auto 20px;
-}
-
-.timeline-icon {
-  width: 24px;
-  height: 24px;
-  color: #E5A4C7;
-}
-
-/* Card interne */
-.card-title {
-  font-family: "Alyamama", serif;
-  font-size: 1.8em;
-  color: #1d1d1d;
-  margin-bottom: 20px;
+  margin: auto;
 }
 
 .info-row {
@@ -290,14 +275,6 @@ h4 {
   margin-bottom: 15px;
   font-size: 1.1em;
   color: #1d1d1d;
-}
-
-.card-text {
-  font-size: 1.6em;
-  color: #1d1d1d;
-  margin-top: 20px;
-  line-height: 1.6;
-  font-style: italic;
 }
 
 .text-right {
@@ -425,10 +402,6 @@ h4 {
   h4 {
     font-size: 1.5em;
   }
-
-  .wedding-title {
-     margin: 28% auto;
-  }
 }
 
 /* Smartphones: 401px – 600px */
@@ -548,5 +521,49 @@ h4 {
 
   h4 {
     font-size: 2.2em;
+  }
+}
+
+/* WEDDING TITLE ADAPTER */
+/* Schermi molto bassi: fino a 600px altezza (mobile landscape, piccoli) */
+/* Molto basso: fino a 600px altezza */
+@media (max-height: 600px) {
+  .wedding-title {
+    margin: 35vh auto 0 auto;
+  }
+}
+
+/* Basso: 601px - 750px altezza */
+@media (min-height: 601px) and (max-height: 750px) {
+  .wedding-title {
+    margin: 40vh auto 0 auto;
+  }
+}
+
+/* Medio-basso: 751px - 900px altezza */
+@media (min-height: 751px) and (max-height: 900px) {
+  .wedding-title {
+    margin: 40vh auto 0 auto;
+  }
+}
+
+/* Medio: 901px - 1050px altezza */
+@media (min-height: 901px) and (max-height: 1050px) {
+  .wedding-title {
+    margin: 45vh auto 0 auto;
+  }
+}
+
+/* Medio-alto: 1051px - 1200px altezza */
+@media (min-height: 1051px) and (max-height: 1200px) {
+  .wedding-title {
+    margin: 50vh auto 0 auto;
+  }
+}
+
+/* Alto: oltre 1200px altezza */
+@media (min-height: 1201px) {
+  .wedding-title {
+    margin: 50vh auto 0 auto;
   }
 }

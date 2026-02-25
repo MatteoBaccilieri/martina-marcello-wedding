@@ -1,0 +1,25 @@
+.location-card {
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.location-card .card-icon {
+  margin: 0 auto 5px;
+}
+
+.card-title {
+  font-family: "Alyamama", serif;
+  font-size: 1.4em;
+  color: #1d1d1d;
+  margin: 0 auto 20px auto;
+}
+
+@media (max-width: 768px) {
+  .advice > b {
+    display: block;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+  }
+}

@@ -3,15 +3,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 30px;
-  width: 30%;
+  width: 100%;
+  max-width: 320px;
+  margin: 0;
 }
 
 .calendar-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 25%;
 }
 
 .calendar-month {
@@ -20,13 +20,6 @@
   text-transform: capitalize;
   text-align: center;
   margin-bottom: 15px;
-}
-
-.calendar-wrapper {
-  margin: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
 }
 
 .wedding-calendar {
@@ -44,12 +37,14 @@
   font-size: 0.8em;
   color: #E5A4C7;
   font-family: "Alyamama", serif;
-  width: 70%;
+  display: flex;
+  width: 100%;
 }
 
-.wedding-calendar .react-calendar__month-view__weekdays__weekday {
-  padding: 10px;
-  flex: 0 0 13.5% !important;
+.wedding-calendar .react-calendar__month-view__weekdays .react-calendar__month-view__weekdays__weekday {
+  flex: 1 1 0 !important; /* distribuisci spazio equamente */
+  padding: 10px 0;
+  text-align: center;
 }
 
 .wedding-calendar .react-calendar__tile {
@@ -88,16 +83,19 @@
 
 /* Location info */
 .location-info {
-  margin-top: 30px;
-  padding-top: 20px;
-  border-top: 2px solid #E5A4C7;
+  text-align: center;
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+  border-left: 2px solid #E5A4C7;
+  padding-left: 50px;
 }
 
 .wedding-date {
   font-family: "Alyamama", serif;
   font-size: 2em;
   color: #E5A4C7;
-  margin-bottom: 15px;
+  margin: 0 auto 0 auto;
 }
 
 .location-name {
@@ -117,22 +115,10 @@
 
 /* Container principale per layout orizzontale */
 .card-location {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 colonne uguali */
   align-items: center;
-  justify-content: center;
   gap: 50px;
-  flex-wrap: wrap;
-}
-
-/* Location info a destra */
-.location-info {
-  margin-top: 0;
-  padding-top: 0;
-  border-top: none;
-  border-left: 2px solid #E5A4C7;
-  padding-left: 50px;
-  text-align: left;
 }
 
 .location-grid {
@@ -142,14 +128,20 @@
   margin-top: 30px;
 }
 
-.location-card {
-  padding: 25px;
-  border-radius: 15px;
-  text-align: center;
+.card-text {
+  font-size: 1.4em;
+  color: #1d1d1d;
+  margin-top: 20px;
+  line-height: 1.6;
+  font-style: italic;
 }
 
-.location-card .card-icon {
-  margin: 0 auto 5px;
+#indicazioni{
+  padding: 0 0 20px 0;
+} 
+
+#location {
+  padding: 15px 0 0 0;
 }
 
 @media (min-width: 768px) {
@@ -158,15 +150,10 @@
   }
 }
 
-/* Responsive: su mobile tornano verticali */
 @media (max-width: 768px) {
   .card-location {
     flex-direction: column;
     gap: 30px;
-  }
-  
-  .calendar-wrapper {
-    width: 80%;
   }
   
   .location-info {
@@ -175,5 +162,19 @@
     padding-left: 0;
     padding-top: 30px;
     text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .calendar-wrapper {
+    max-width: clamp(180px, 60vw, 300px);
+  }
+}
+
+@media (max-width: 768px) {
+  .card-location {
+    grid-template-columns: 1fr; /* una colonna */
+    grid-template-rows: auto auto; /* due righe automatiche */
+    gap: 30px; /* riduci il gap su mobile */
   }
 }

@@ -14,7 +14,7 @@ return (
         <div className="card hero-card">
           <Heart className="icon-heart" fill="currentColor" />
           <p className="wedding-subtitle">Siamo lieti di annunciare il nostro matrimonio</p>
-          <h1 className="wedding-title">Martina <span className="accent">&</span> Marcello</h1>
+          <h1 className="wedding-title">Martina & Marcello</h1>
           
           <button onClick={() => scrollToSection('details')} className="scroll-btn">
             <ChevronDown className="scroll-icon" />

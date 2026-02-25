@@ -1,5 +1,5 @@
 import React from 'react';
-import {MapPin} from 'lucide-react';
+import {CarFront} from 'lucide-react';
 import '../App.css';
 import '../styles/DetailsSection.css'
 
@@ -9,10 +9,10 @@ const DetailsSection = () =>{
         <section id="indicazioni" className="section section-rose">
             <div className="card">
                 <h2 className="section-title">Come Arrivare</h2>
-                <p className='text text-center'><b>Si consiglia di seguire il percorso indicato per evitare strade secondarie non asfaltate.</b></p>
+                <p className='text text-center advice'><b>Si consiglia di seguire il percorso indicato per evitare strade secondarie non asfaltate.</b></p>
                 
                 <div className="location-card">
-                    <MapPin className="card-icon" />
+                    <CarFront className="card-icon" />
                     <h3 className="card-title">In Auto</h3>
                     <p className="card-text">
                     Una volta arrivati a Castel San Pietro Terme<br/>

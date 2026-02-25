@@ -3,6 +3,7 @@
   justify-content: center;
   gap: 12px;
   margin-bottom: 20px;
+  flex-wrap: nowrap;
 }
 
 /* Colon */
@@ -30,4 +31,49 @@
   width: 110px;
   height: 70px;
   perspective: 1200px;
+}
+
+/* Mobile: layout verticale */
+@media (max-width: 600px) {
+  .countdown {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .colon {
+    display: none; /* nascondi i due punti */
+  }
+  
+  .calendar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px; /* spazio tra numero e label */
+  }
+  
+  .flip-card {
+    width: 100px;
+    height: 60px;
+    order: 1; /* numero sopra */
+  }
+  
+  .top, .bottom, .flip-top, .flip-bottom {
+    font-size: 2em;
+    border-radius: 10px;
+  }
+  
+  .label {
+    order: 2; /* label sotto */
+    margin-top: 0;
+  }
+  
+  .label h4 {
+    font-size: 1em;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ff69b4;
+    font-family: 'Playfair Display', serif;
+  }
 }
