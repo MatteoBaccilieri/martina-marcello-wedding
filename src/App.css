@@ -197,9 +197,16 @@ h4 {
   font-family: 'Eyesome Script';
   font-weight: 900;
   font-size: 5em;
-  color: #000000;
+  color: #000000 !important;
   -webkit-text-stroke: 1px #E5A4C7;
   margin: 5em auto 0 auto;
+  /* Disabilita feature font che causano problemi */
+  font-feature-settings: normal;
+  font-variant: normal;
+
+  /* Forza rendering semplice */
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
 }
 
 .wedding-subtitle {
@@ -362,18 +369,8 @@ h4 {
   .timeline-item {
     gap: 40px;
   }
-  
-  .wedding-title {
-    font-size: 6em;
-    font-style: italic;
-  }
 }
 
-@media (max-width: 1366px) {
-  .wedding-title {
-    margin: 2.5em auto 0 auto;
-  }
-}
 /* Responsive */
 /* Small smartphones: up to 400px */
 @media (max-width: 400px) {
@@ -525,18 +522,19 @@ h4 {
 }
 
 /* WEDDING TITLE ADAPTER */
-/* Schermi molto bassi: fino a 600px altezza (mobile landscape, piccoli) */
 /* Molto basso: fino a 600px altezza */
 @media (max-height: 600px) {
   .wedding-title {
     margin: 35vh auto 0 auto;
+    font-size: 2.7em;
   }
 }
 
 /* Basso: 601px - 750px altezza */
 @media (min-height: 601px) and (max-height: 750px) {
   .wedding-title {
-    margin: 40vh auto 0 auto;
+    margin: 35vh auto 0 auto;
+    font-size: 4em;
   }
 }
 
@@ -544,6 +542,7 @@ h4 {
 @media (min-height: 751px) and (max-height: 900px) {
   .wedding-title {
     margin: 40vh auto 0 auto;
+    font-size: 4em;
   }
 }
 
