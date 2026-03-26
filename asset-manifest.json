@@ -1,19 +1,22 @@
 {
   "files": {
-    "main.css": "/martina-marcello-wedding/static/css/main.5531b37d.css",
-    "main.js": "/martina-marcello-wedding/static/js/main.7a4f5797.js",
+    "main.css": "/martina-marcello-wedding/static/css/main.f316a694.css",
+    "main.js": "/martina-marcello-wedding/static/js/main.908a6443.js",
     "static/js/453.6ccedbfb.chunk.js": "/martina-marcello-wedding/static/js/453.6ccedbfb.chunk.js",
     "static/media/Martina & Marcello_17.jpeg": "/martina-marcello-wedding/static/media/Martina & Marcello_17.b575241e0fa5d60cafc5.jpeg",
     "static/media/overlay_background.png": "/martina-marcello-wedding/static/media/overlay_background.e9890197e0a0bc7e0c38.png",
+    "static/media/stoormtrooper.png": "/martina-marcello-wedding/static/media/stoormtrooper.366474faa5555ca44479.png",
+    "static/media/galactic-empire-logo.png": "/martina-marcello-wedding/static/media/galactic-empire-logo.ec8946e453d95d3bc267.png",
+    "static/media/toppng.com-free-png-darth-vader-png-images-transparent-darth-vader-face-2068x2009.png": "/martina-marcello-wedding/static/media/toppng.com-free-png-darth-vader-png-images-transparent-darth-vader-face-2068x2009.15aeddf1b80d134610e4.png",
     "static/media/EyesomeScript.woff": "/martina-marcello-wedding/static/media/EyesomeScript.1c3ecfdcf2d220865407.woff",
     "static/media/EyesomeScript.woff2": "/martina-marcello-wedding/static/media/EyesomeScript.26d7e44e22f11f98bb1d.woff2",
     "index.html": "/martina-marcello-wedding/index.html",
-    "main.5531b37d.css.map": "/martina-marcello-wedding/static/css/main.5531b37d.css.map",
-    "main.7a4f5797.js.map": "/martina-marcello-wedding/static/js/main.7a4f5797.js.map",
+    "main.f316a694.css.map": "/martina-marcello-wedding/static/css/main.f316a694.css.map",
+    "main.908a6443.js.map": "/martina-marcello-wedding/static/js/main.908a6443.js.map",
     "453.6ccedbfb.chunk.js.map": "/martina-marcello-wedding/static/js/453.6ccedbfb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5531b37d.css",
-    "static/js/main.7a4f5797.js"
+    "static/css/main.f316a694.css",
+    "static/js/main.908a6443.js"
   ]
 }
