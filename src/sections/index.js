@@ -7,3 +7,4 @@ export { default as RSVPSection } from './RSVPSection';
 export { default as Footer } from './Footer';   
 export { default as AddToCalendar } from './AddToCalendar';
 export { default as Countdown } from './Countdown';
+export { default as Login } from './Login';

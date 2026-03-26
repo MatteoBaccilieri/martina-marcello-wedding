@@ -1,0 +1,859 @@
+/* Star Wars Table Theme - Database Imperiale Separato */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --imp-orange: #ff9900;      /* Arancio dati imperiali */
+  --imp-green: #00ff41;       /* Verde terminale */
+  --imp-blue: #00ccff;        /* Blu olografico */
+  --imp-red: #ff3333;         /* Rosso allarme */
+  --imp-dark: #0d1117;        /* Nero/blu profondo */
+  --imp-panel: #161b22;       /* Grigio pannello */
+  --imp-border: #30363d;      /* Bordo tecnico */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* SFONDO: Iperspazio in movimento (stelle che accelerano) */
+.imperial-database {
+  min-height: 100vh;
+  width: 100%;
+  background: 
+    radial-gradient(circle at 50% 50%, #1a1f2e 0%, #0d1117 50%, #000000 100%);
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center; 
+  overflow: hidden;
+  position: relative;
+  font-family: 'Exo 2', sans-serif;
+  padding: 2rem;
+}
+
+/* Effetto iperspazio - linee che convergono al centro */
+.hyperspeed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 50px,
+      rgba(255, 255, 255, 0.03) 50px,
+      rgba(255, 255, 255, 0.03) 51px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 50px,
+      rgba(255, 255, 255, 0.03) 50px,
+      rgba(255, 255, 255, 0.03) 51px
+    );
+  animation: gridMove 20s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes gridMove {
+  0% { transform: perspective(500px) rotateX(60deg) translateY(0); }
+  100% { transform: perspective(500px) rotateX(60deg) translateY(50px); }
+}
+
+/* Linee di dati che scorrono (effetto digitale) */
+.data-stream {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.1;
+}
+
+.data-stream::before {
+  content: '01001010 01001000 01001111 01010011 01010000 01000101 01010010 01001010 01001111 01010011 01010000 01000101 01010010';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 14px;
+  color: var(--imp-green);
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-all;
+  animation: dataFall 10s linear infinite;
+  text-shadow: 0 0 5px var(--imp-green);
+}
+
+@keyframes dataFall {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100vh); }
+}
+
+/* CONTENITORE TABELLA - Stile terminale imperiale */
+.sw-table-container {
+  position: relative;
+  z-index: 10;
+  background: 
+    linear-gradient(135deg, rgba(22, 27, 34, 0.95) 0%, rgba(13, 17, 23, 0.98) 100%);
+  border: 1px solid var(--imp-border);
+  border-top: 3px solid var(--imp-orange);
+  border-bottom: 3px solid var(--imp-orange);
+  border-radius: 2px;
+  padding: 0;
+  width: 95%;
+  max-width: 1000px;
+  max-height: 85vh;
+  overflow: hidden;
+  box-shadow: 
+    0 0 0 1px rgba(0,0,0,0.8),
+    0 20px 50px rgba(0,0,0,0.8),
+    inset 0 0 80px rgba(0,0,0,0.5),
+    0 0 20px rgba(255, 153, 0, 0.1);
+  animation: bootUp 0.8s ease-out;
+  margin: 0 auto;
+  align-self: center;
+}
+
+@keyframes bootUp {
+  0% { 
+    opacity: 0; 
+    transform: scale(0.95);
+    filter: brightness(2) blur(10px);
+  }
+  50% { filter: brightness(1.5) blur(2px); }
+  100% { 
+    opacity: 1; 
+    transform: scale(1);
+    filter: brightness(1) blur(0);
+  }
+}
+
+/* HEADER con logo placeholder */
+.sw-table-header {
+  background: 
+    linear-gradient(180deg, rgba(255, 153, 0, 0.1) 0%, transparent 100%),
+    rgba(22, 27, 34, 0.8);
+  padding: 2rem;
+  text-align: center;
+  border-bottom: 1px solid var(--imp-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.sw-table-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--imp-orange), transparent);
+  animation: scanLine 3s ease-in-out infinite;
+}
+
+@keyframes scanLine {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.sw-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--imp-orange);
+  letter-spacing: 0.2em;
+  text-shadow: 0 0 10px rgba(255, 153, 0, 0.5);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.sw-subtitle {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.title-underline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--imp-orange), transparent);
+  width: 60%;
+  margin: 1rem auto;
+  opacity: 0.6;
+}
+
+/* PLACEHOLDER per logo/header image */
+.sw-header-image-placeholder {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1.5rem; /* Centrato con margine sotto */
+  border: 2px dashed rgba(255, 153, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: relative;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.sw-header-image-placeholder::before {
+  content: '★';
+  position: absolute;
+  font-size: 2.5rem;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.placeholder-text {
+  color: rgba(255, 153, 0, 0.5);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+/* WRAPPER tabella con scroll */
+.sw-table-wrapper {
+  max-height: calc(85vh - 300px);
+  overflow-y: auto;
+  position: relative;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Scrollbar stile terminale */
+.sw-table-wrapper::-webkit-scrollbar {
+  width: 10px;
+}
+
+.sw-table-wrapper::-webkit-scrollbar-track {
+  background: var(--imp-dark);
+  border-left: 1px solid var(--imp-border);
+}
+
+.sw-table-wrapper::-webkit-scrollbar-thumb {
+  background: var(--imp-orange);
+  border: 2px solid var(--imp-dark);
+}
+
+.sw-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #ffaa33;
+}
+
+/* TABELLA - Stile database tecnico */
+.sw-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: 'Exo 2', sans-serif;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+}
+
+/* Header colonne */
+.sw-table thead {
+  background: rgba(22, 27, 34, 0.95);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.sw-table th {
+  padding: 1.2rem 1rem;
+  text-align: left;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--imp-green);
+  border-bottom: 2px solid var(--imp-border);
+  text-shadow: 0 0 5px rgba(0, 255, 65, 0.3);
+}
+
+.sw-table th.col-avatar {
+  width: 80px;
+  text-align: center;
+}
+
+.sw-table th.col-status {
+  width: 140px;
+  text-align: center;
+}
+
+/* Celle */
+.sw-table td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(48, 54, 61, 0.5);
+  transition: all 0.2s;
+}
+
+/* Righe */
+.sw-table tbody tr {
+  background: rgba(22, 27, 34, 0.4);
+}
+
+.sw-table tbody tr:nth-child(even) {
+  background: rgba(22, 27, 34, 0.6);
+}
+
+/* Hover effetto selezione */
+.sw-table tbody tr:hover {
+  background: rgba(255, 153, 0, 0.05);
+  box-shadow: inset 0 0 0 1px rgba(255, 153, 0, 0.2);
+}
+
+.sw-table tbody tr:hover td {
+  color: #fff;
+}
+
+/* PLACEHOLDER Avatar - Stile badge imperiale */
+.cell-avatar {
+  text-align: center;
+}
+
+.sw-avatar-placeholder {
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--imp-border);
+  background: 
+    linear-gradient(135deg, rgba(255, 153, 0, 0.1) 0%, rgba(0,0,0,0.5) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 4px; /* Forma rettangolare stile documento */
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+.sw-avatar-placeholder::before {
+  content: 'IMG';
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.05em;
+}
+
+.avatar-hint {
+  display: none; /* Nascosto, usiamo ::before */
+}
+
+/* Icone restrizioni */
+.cell-diet .diet-content {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.sw-icon-placeholder {
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--imp-border);
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  color: rgba(255, 153, 0, 0.6);
+  border-radius: 2px;
+}
+
+/* Testi celle */
+.cell-name {
+  font-weight: 600;
+  font-family: 'Share Tech Mono', monospace;
+  letter-spacing: 0.05em;
+}
+
+/* Badge Status */
+.cell-status {
+  text-align: center;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 2px;
+  font-size: 0.75rem;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid;
+  font-weight: 700;
+}
+
+.status-badge.confirmed {
+  background: rgba(0, 255, 65, 0.1);
+  border-color: var(--imp-green);
+  color: var(--imp-green);
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.1);
+}
+
+.status-badge.pending {
+  background: rgba(255, 153, 0, 0.1);
+  border-color: var(--imp-orange);
+  color: var(--imp-orange);
+}
+
+.status-badge.sith {
+  background: rgba(255, 51, 51, 0.1);
+  border-color: var(--imp-red);
+  color: var(--imp-red);
+  box-shadow: 0 0 10px rgba(255, 51, 51, 0.2);
+  animation: alertPulse 2s infinite;
+}
+
+@keyframes alertPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* Azioni footer */
+.sw-table-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: rgba(22, 27, 34, 0.8);
+  border-top: 1px solid var(--imp-border);
+  gap: 1rem;
+}
+
+/* Bottoni stile ponte di comando */
+.holo-button {
+  position: relative;
+  padding: 0.8rem 1.5rem;
+  background: transparent;
+  border: 1px solid var(--imp-orange);
+  color: var(--imp-orange);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+}
+
+.holo-button:hover {
+  background: rgba(255, 153, 0, 0.15);
+  box-shadow: 0 0 20px rgba(255, 153, 0, 0.3);
+  text-shadow: 0 0 8px rgba(255, 153, 0, 0.8);
+  transform: translateY(-1px);
+}
+
+.holo-button.red {
+  border-color: var(--imp-red);
+  color: var(--imp-red);
+}
+
+.holo-button.red:hover {
+  background: rgba(255, 51, 51, 0.15);
+  box-shadow: 0 0 20px rgba(255, 51, 51, 0.3);
+  text-shadow: 0 0 8px rgba(255, 51, 51, 0.8);
+}
+
+.holo-button.small {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.75rem;
+}
+
+/* Decorazioni laterali - Placeholder per PNG tecniche */
+.sw-side-decoration {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 200px;
+  background: rgba(22, 27, 34, 0.6);
+  border: 1px solid var(--imp-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.sw-side-decoration.left {
+  left: 30px;
+}
+
+.sw-side-decoration.right {
+  right: 30px;
+}
+
+/* Overlay scanline orizzontali (diverse dalle altre) */
+.scanlines-terminal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.1) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.3;
+}
+
+/* Info sistema in alto a destra */
+.system-info {
+position: fixed;
+  top: 20px;
+  right: 20px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--imp-green);
+  opacity: 0.7;
+  z-index: 100;
+  text-align: right;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--imp-border);
+  border-radius: 2px;
+}
+
+.system-info span {
+  display: block;
+}
+
+/*Overlay logput message*/
+.hologram-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+  padding: 20px;
+}
+
+.hologram-modal {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  background: rgba(0, 20, 40, 0.7);
+  border: 2px solid rgba(0, 216, 255, 0.6);
+  border-radius: 10px;
+  padding: 3rem;
+  transform: perspective(1000px) rotateX(10deg) scale(0.9);
+  opacity: 0;
+  animation: hologramAppear 0.6s ease forwards, float 6s ease-in-out infinite;
+  box-shadow: 
+    0 0 60px rgba(0, 216, 255, 0.4),
+    inset 0 0 60px rgba(0, 216, 255, 0.1);
+  overflow: hidden;
+}
+
+.hologram-modal.active {
+  opacity: 1;
+  transform: perspective(1000px) rotateX(0deg) scale(1);
+}
+
+@keyframes hologramAppear {
+  0% {
+    opacity: 0;
+    transform: perspective(1000px) rotateX(20deg) scale(0.8) translateY(-50px);
+    filter: brightness(2) blur(10px);
+  }
+  50% {
+    filter: brightness(1.5) blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(1000px) rotateX(0deg) scale(1) translateY(0);
+    filter: brightness(1.1) blur(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.hologram-scanlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(0, 216, 255, 0.05) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  animation: scanlineMove 8s linear infinite;
+  z-index: 1;
+}
+
+@keyframes scanlineMove {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(10px); }
+}
+
+.hologram-flicker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 216, 255, 0.08);
+  opacity: 0;
+  pointer-events: none;
+  animation: flicker 4s infinite;
+  z-index: 1;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 0; }
+  5%, 10% { opacity: 0.1; }
+  7.5% { opacity: 0; }
+  15% { opacity: 0.1; }
+  20% { opacity: 0; }
+  50% { opacity: 0; }
+  52% { opacity: 0.1; }
+  54% { opacity: 0; }
+}
+
+.hologram-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #00d8ff;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.hologram-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1.5rem;
+  border: 3px solid #00d8ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(0, 216, 255, 0.5);
+  animation: iconPulse 2s ease-in-out infinite;
+}
+
+.hologram-icon svg {
+  width: 30px;
+  height: 30px;
+  stroke: #00d8ff;
+  fill: none;
+}
+
+@keyframes iconPulse {
+  0%, 100% { 
+    transform: scale(1); 
+    box-shadow: 0 0 20px rgba(0, 216, 255, 0.5); 
+  }
+  50% { 
+    transform: scale(1.05); 
+    box-shadow: 0 0 30px rgba(0, 216, 255, 0.8); 
+  }
+}
+
+.hologram-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 20px rgba(0, 216, 255, 0.8);
+  animation: textGlow 3s ease-in-out infinite;
+  text-transform: uppercase;
+}
+
+@keyframes textGlow {
+  0%, 100% { text-shadow: 0 0 20px rgba(0, 216, 255, 0.8); }
+  50% { text-shadow: 0 0 30px rgba(0, 216, 255, 1), 0 0 40px rgba(0, 216, 255, 0.5); }
+}
+
+.hologram-text {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 300;
+  color: #fff;
+}
+
+.hologram-subtext {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  font-style: italic;
+  margin-bottom: 2rem;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.hologram-coordinates {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  opacity: 0.6;
+  border-top: 1px solid rgba(0, 216, 255, 0.3);
+  padding-top: 1rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.1em;
+  color: rgba(0, 216, 255, 0.8);
+}
+
+.coord-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+
+/* ERROR STATE */
+.hologram-modal.error {
+  border-color: rgba(255, 0, 0, 0.6);
+  box-shadow: 0 0 60px rgba(255, 0, 0, 0.4);
+}
+
+.hologram-modal.error .hologram-content {
+  color: #ff0000;
+}
+
+.hologram-modal.error .hologram-icon {
+  border-color: #ff0000;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+.hologram-modal.error .hologram-title {
+  color: #ff0000;
+  text-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .sw-table-container {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    max-height: 100vh;
+  }
+  
+  .sw-side-decoration {
+    display: none;
+  }
+  
+  .sw-title {
+    font-size: 1.4rem;
+  }
+  
+  .sw-table th,
+  .sw-table td {
+    padding: 0.8rem 0.5rem;
+    font-size: 0.85rem;
+  }
+  
+  .col-avatar,
+  .col-status {
+    width: auto;
+  }
+  
+  .sw-table-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .holo-button {
+    width: 100%;
+  }
+    .hologram-modal {
+    padding: 2rem;
+    transform: perspective(1000px) rotateX(5deg) scale(0.95);
+  }
+  
+  .hologram-title {
+    font-size: 1.4rem;
+    letter-spacing: 0.2em;
+  }
+  
+  .hologram-coordinates {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1200px) {
+  .sw-side-decoration {
+    display: none; /* Nascondi su schermi medi */
+  }
+}
+
+@media (max-width: 768px) {
+  .imperial-database {
+    padding: 1rem;
+    justify-content: flex-start; /* Inizia dall'alto su mobile */
+    padding-top: 5rem; /* Spazio per system-info */
+  }
+  
+  .sw-table-container {
+    width: 100%;
+    max-height: none; /* Altezza automatica su mobile */
+    margin: 0;
+  }
+  
+  .system-info {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-size: 0.65rem;
+  }
+  
+  .sw-header-image-placeholder {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+  }
+  
+  .sw-title {
+    font-size: 1.4rem;
+  }
+}

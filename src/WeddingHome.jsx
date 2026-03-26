@@ -19,10 +19,6 @@ const WeddingHome = ({ weddingDate }) => {
     return () => observer.disconnect();
   }, []);
 
-  const scrollToSection = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <div className="wedding-container">
       <HeroSection />

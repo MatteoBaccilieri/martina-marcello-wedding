@@ -8,7 +8,7 @@ const Countdown = ({ weddingDate }) => {
   useEffect(() => {
   const interval = setInterval(() => {
     const now = new Date();
-    console.log(now)
+    
     const diff = weddingDate.getTime() - now.getTime();
 
     if (diff <= 0) {

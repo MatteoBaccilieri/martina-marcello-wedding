@@ -4,6 +4,10 @@ import '../App.css';
 import '../styles/GiftSection.css'
 
 const GiftSection = () => {
+    const navigateTo = () => {
+      window.location.href =
+        "https://liste.gattinoni.it/installations/siapDesign/GattinoniTravelStore/index.php?page=cosaSiPuoRegalare&codsoc=G2";
+    };
     return (
     <section className="section section-rose">
         <div className="card text-center">
@@ -15,7 +19,7 @@ const GiftSection = () => {
             Se volete aiutarci a realizzare il viaggio dei nostri sogni, trovate qui la nostra lista nozze.< br />
             Per accedere alla lista nozze è richiesto nome utente (MARTINAMARCELLO) nella sezione 'Accesso Invitati'
           </p>
-          <button className="btn btn-primary">Visualizza Lista Nozze</button>
+          <button className="btn btn-primary" onClick={navigateTo}>Visualizza Lista Nozze</button>
         </div>
     </section>
     );
