@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import WeddingHome from "./WeddingHome";
 import Login from "./sections/Login"
 import "./App.css";
@@ -9,7 +9,7 @@ function App() {
   const weddingDate = new Date(2026, 7, 29, 17, 0, 0);
 
   return (
-    <Router basename="/martina-marcello-wedding">
+    <Router>
       <Routes>
         <Route 
           path="/" 
