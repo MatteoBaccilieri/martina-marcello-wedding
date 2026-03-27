@@ -5,27 +5,6 @@ import Login from "./sections/Login"
 import "./App.css";
 import GuestList from "./sections/GuestList";
 
-
-// Component to handle hash routing from subdirectory
-function InitialRedirect() {
-  const [hasRedirected, setHasRedirected] = useState(false);
-  
-  useEffect(() => {
-    if (hasRedirected) return;
-    
-    const pathname = window.location.pathname;
-    const hash = window.location.hash;
-    
-    // If we're in a subdirectory with a hash, redirect to root with same hash
-    if (pathname !== '/' && hash && !hasRedirected) {
-      setHasRedirected(true);
-      window.location.replace('/' + hash);
-    }
-  }, [hasRedirected]);
-  
-  return null;
-}
-
 function App() {
   const weddingDate = new Date(2026, 7, 29, 17, 0, 0);
 

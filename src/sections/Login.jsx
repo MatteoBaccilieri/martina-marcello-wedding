@@ -16,7 +16,7 @@ const StarWarsLogin = () => {
 
   useEffect(() => {
       if (localStorage.getItem("auth")) {
-        navigate("/login-lista");
+        navigate("/lista-invitati");
       }
     }, [navigate]);
 
