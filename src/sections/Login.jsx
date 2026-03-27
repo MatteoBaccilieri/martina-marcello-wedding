@@ -14,11 +14,13 @@ const StarWarsLogin = () => {
   const [hologramPhase, setHologramPhase] = useState('connecting');
   const navigate = useNavigate();
 
-  useEffect(() => {
-      if (localStorage.getItem("auth")) {
-        navigate("/lista-invitati");
-      }
-    }, [navigate]);
+useEffect(() => {
+  if (localStorage.getItem("auth")) {
+    setTimeout(() => {
+      navigate("/lista-invitati");
+    }, 0);
+  }
+}, [navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
