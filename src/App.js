@@ -28,10 +28,9 @@ function InitialRedirect() {
 
 function App() {
   const weddingDate = new Date(2026, 7, 29, 17, 0, 0);
-  
+
   return (
     <Router>
-      <InitialRedirect />
       <Routes>
         <Route 
           path="/" 
