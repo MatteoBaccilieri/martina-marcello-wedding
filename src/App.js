@@ -28,11 +28,7 @@ function InitialRedirect() {
 
 function App() {
   const weddingDate = new Date(2026, 7, 29, 17, 0, 0);
-
-  console.log("Full URL:", window.location.href);
-  console.log("Pathname:", window.location.pathname);
-  console.log("Hash:", window.location.hash);
-  const basename = window.location.pathname.replace(/\/$/, ''); 
+  
   return (
     <Router>
       <InitialRedirect />

@@ -14,6 +14,12 @@ const StarWarsLogin = () => {
   const [hologramPhase, setHologramPhase] = useState('connecting');
   const navigate = useNavigate();
 
+  useEffect(() => {
+      if (localStorage.getItem("auth")) {
+        navigate("/login-lista");
+      }
+    }, [navigate]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
