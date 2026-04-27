@@ -18,6 +18,12 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--imp-orange) var(--imp-dark);
+}
+
 /* SFONDO: Iperspazio in movimento (stelle che accelerano) */
 .imperial-database {
   min-height: 100vh;
@@ -111,10 +117,8 @@
   border-bottom: 3px solid var(--imp-orange);
   border-radius: 2px;
   padding: 0;
-  width: 95%;
-  max-width: 1000px;
-  max-height: 85vh;
-  overflow: hidden;
+  width: 85%;
+  overflow: visible;
   box-shadow: 
     0 0 0 1px rgba(0,0,0,0.8),
     0 20px 50px rgba(0,0,0,0.8),
@@ -228,8 +232,6 @@
 
 /* WRAPPER tabella con scroll */
 .sw-table-wrapper {
-  max-height: calc(85vh - 300px);
-  overflow-y: auto;
   position: relative;
   background: rgba(0, 0, 0, 0.3);
 }
